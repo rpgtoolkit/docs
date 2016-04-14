@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>File Formats - RPG Toolkit Development System</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "File Formats";
+    var mkdocs_page_input_path = "developer\formats.md";
+    var mkdocs_page_url = "/developer/formats/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> RPG Toolkit Development System</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../user/">User Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developer Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Home</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">File Formats</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#file-formats">File Formats</a></li>
+                
+                    <li><a class="toctree-l4" href="#legacy">Legacy</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">RPG Toolkit Development System</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developer Guide &raquo;</li>
+        
+      
+    
+    <li>File Formats</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/rpgtoolkit" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="file-formats">File Formats</h2>
+<p>The editor and engine components use a variety of specialized file formats and schemas to
+facilitate game development and to support various features common in role-playing games.</p>
+<h3 id="legacy">Legacy</h3>
+<p>The engine has some backwards compatibility with older (legacy) versions. The legacy file
+formats are binary formats that use <a href="https://en.wikipedia.org/wiki/Endianness">little-endian</a>
+byte order.</p>
+<ul>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#board">Board</a></li>
+<li><a href="#">Enemy</a></li>
+<li><a href="#">Item</a></li>
+<li><a href="#">Project (Main File)</a></li>
+<li><a href="#">Player</a></li>
+<li><a href="#">Special Move</a></li>
+<li><a href="#">Status Effect</a></li>
+<li><a href="#">Tile</a></li>
+<li><a href="#">Tile Animation</a></li>
+<li><a href="#">Tile Bitmap</a></li>
+<li><a href="#">Tileset</a></li>
+</ul>
+<h4 id="data-types">Data Types</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u8</td>
+<td>unsigned 8-bit integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>unsigned 8-bit boolean (false = 0, true &ne; 0)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>u16</td>
+<td>unsigned 16-bit little-endian integer</td>
+<td>2</td>
+</tr>
+<tr>
+<td>u32</td>
+<td>unsigned 32-bit little-endian integer</td>
+<td>4</td>
+</tr>
+<tr>
+<td>u64</td>
+<td>unsigned 64-bit little-endian integer</td>
+<td>8</td>
+</tr>
+<tr>
+<td>s16</td>
+<td>signed 16-bit little-endian integer</td>
+<td>2</td>
+</tr>
+<tr>
+<td>s32</td>
+<td>signed 32-bit little-endian integer</td>
+<td>4</td>
+</tr>
+<tr>
+<td>s64</td>
+<td>signed 64-bit little-endian integer</td>
+<td>8</td>
+</tr>
+<tr>
+<td>f32</td>
+<td>IEEE 754 single-precision floating-point number</td>
+<td>4</td>
+</tr>
+<tr>
+<td>f64</td>
+<td>IEEE 754 double-precision floating-point number</td>
+<td>8</td>
+</tr>
+<tr>
+<td>ascii</td>
+<td>null-terminated ASCII-encoded string</td>
+<td>*</td>
+</tr>
+<tr>
+<td>rgb</td>
+<td>r8g8b8 packed color</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h4 id="animation-frame">Animation Frame</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path</td>
+<td>ascii</td>
+<td>Path to the frame image</td>
+</tr>
+<tr>
+<td>Transparent Color</td>
+<td>rgb</td>
+<td>Color to be replaced with transparency when drawn</td>
+</tr>
+<tr>
+<td>Sound</td>
+<td>ascii</td>
+<td>Path to sound to play when frame is drawn</td>
+</tr>
+</tbody>
+</table>
+<h4 id="animation">Animation</h4>
+<p><strong>Supported versions</strong>: 2.3</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>ascii</td>
+<td>RPGTLKIT ANIM</td>
+</tr>
+<tr>
+<td>Major Version</td>
+<td>u16</td>
+<td>Major version</td>
+</tr>
+<tr>
+<td>Minor Version</td>
+<td>u16</td>
+<td>Minor version</td>
+</tr>
+<tr>
+<td>Width</td>
+<td>u32</td>
+<td>Animation width (x bound)</td>
+</tr>
+<tr>
+<td>Height</td>
+<td>u32</td>
+<td>Animation height (y bound)</td>
+</tr>
+<tr>
+<td>Frame Count</td>
+<td>u32</td>
+<td># of animation frames</td>
+</tr>
+<tr>
+<td>Frames</td>
+<td>Animation Frame [n]</td>
+<td>Animation frames (n = <strong>Frame Count</strong>)</td>
+</tr>
+<tr>
+<td>Delay</td>
+<td>f32</td>
+<td>Delay (in seconds) between frames</td>
+</tr>
+</tbody>
+</table>
+<h4 id="background">Background</h4>
+<p><strong>Supported versions</strong>: 2.3</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>ascii</td>
+<td>RPGTLKIT BKG</td>
+</tr>
+<tr>
+<td>Major Version</td>
+<td>u16</td>
+<td>Major version</td>
+</tr>
+<tr>
+<td>Minor Version</td>
+<td>u16</td>
+<td>Minor version</td>
+</tr>
+<tr>
+<td>Background Image</td>
+<td>ascii</td>
+<td>Path to background image to draw</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>ascii</td>
+<td>Path to audio file to play as background music</td>
+</tr>
+<tr>
+<td>Selection Sound</td>
+<td>ascii</td>
+<td>Path to audio file to play when player moves through menu</td>
+</tr>
+<tr>
+<td>Choice Sound</td>
+<td>ascii</td>
+<td>Path to audio file to play when player chooses from menu</td>
+</tr>
+<tr>
+<td>Ready Sound</td>
+<td>ascii</td>
+<td>Path to audio file to play when player is ready</td>
+</tr>
+<tr>
+<td>Invalid Sound</td>
+<td>ascii</td>
+<td>Path to audio file to play when player makes an invalid choice</td>
+</tr>
+</tbody>
+</table>
+<h4 id="board">Board</h4>
+<blockquote>
+<p>This documentation is incomplete.</p>
+</blockquote>
+<p><strong>Supported versions</strong>: 2.4</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>ascii</td>
+<td>RPGTLKIT BOARD</td>
+</tr>
+<tr>
+<td>Major Version</td>
+<td>u16</td>
+<td>Major version</td>
+</tr>
+<tr>
+<td>Minor Version</td>
+<td>u16</td>
+<td>Minor version</td>
+</tr>
+<tr>
+<td>Width</td>
+<td>u16</td>
+<td>Board width (in tiles)</td>
+</tr>
+<tr>
+<td>Height</td>
+<td>u16</td>
+<td>Board height (in tiles)</td>
+</tr>
+<tr>
+<td>Layer Count</td>
+<td>u16</td>
+<td>Board layer count</td>
+</tr>
+<tr>
+<td>Coordinate Type</td>
+<td>Coordinate Type</td>
+<td>Coordinate type (e.g. ortho, isometric)</td>
+</tr>
+<tr>
+<td>Tile LUT Size</td>
+<td>u16</td>
+<td># of LUT entries</td>
+</tr>
+<tr>
+<td>Tile LUT</td>
+<td>string [n]</td>
+<td>See <a href="#tile-lookup-table">Tile Lookup Table</a></td>
+</tr>
+<tr>
+<td>Tile Matrix</td>
+<td>u16 [n]</td>
+<td>See <a href="#tile-matrix">Tile Matrix</a></td>
+</tr>
+<tr>
+<td>Shading Type</td>
+<td>u8</td>
+<td>Unused</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tile-lookup-table">Tile Lookup Table</h5>
+<p>The tile lookup table (LUT) is a table of strings where each string is a path to a
+single tile, an animated tile, or a path to a tileset with a tile index appended
+to the file extension. Each tile in the board refers to an entry in the lookup table.</p>
+<p><strong>Example LUT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>grass.gph</td>
+<td>Single tile</td>
+</tr>
+<tr>
+<td>1</td>
+<td>water.tan</td>
+<td>Animated tile</td>
+</tr>
+<tr>
+<td>2</td>
+<td>terrain.tst12</td>
+<td>Tileset (tile # 12)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tile-matrix">Tile Matrix</h5>
+<p>The tile matrix is a flattened 3-dimensional array of u16 integers referring to entries in the
+tile lookup table. The tile matrix uses an optional and rudimentary run-length encoding (RLE)
+compression scheme for repeating sequences of tiles.</p>
+<p><strong>Psuedocode</strong></p>
+<pre><code>let size := width * height * depth
+let offset := 0
+
+while offset &lt; size
+
+  let index := read_u16()
+  let count := 1
+
+  if index &lt; 0 then
+    count = -index
+    index = read_u16()
+  end if
+
+  for i = 0 to count - 1
+    matrix[offset + i] := index
+  end for
+
+  offset := offset + count
+
+end while
+</code></pre>
+
+<h4 id="coordinate-type">Coordinate Type</h4>
+<p><strong>Enumeration</strong>  </p>
+<p>Defines coordinate types used for directional movement, rendering, raycasting,
+collision detection, and other mathematical transformations. A coordinate type defines the
+render mode used for various game elements (e.g. boards).</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orthogonal</td>
+<td>u32</td>
+<td>1</td>
+<td>2D orthogonal perspective</td>
+</tr>
+<tr>
+<td>Isometric Stacked</td>
+<td>u32</td>
+<td>2</td>
+<td>2D stacked isometric perspective</td>
+</tr>
+<tr>
+<td>Isometric Rotated</td>
+<td>u32</td>
+<td>6</td>
+<td>2D rotated isometric perspective</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enemy">Enemy</h4>
+<p><strong>Supported versions</strong>: 2.1</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>ascii</td>
+<td>RPGTLKIT ENEMY</td>
+</tr>
+<tr>
+<td>Major Version</td>
+<td>u16</td>
+<td>Major version</td>
+</tr>
+<tr>
+<td>Minor Version</td>
+<td>u16</td>
+<td>Minor version</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>ascii</td>
+<td>Display Name</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>u32</td>
+<td>Base HP</td>
+</tr>
+<tr>
+<td>SMP</td>
+<td>u32</td>
+<td>Base SMP</td>
+</tr>
+<tr>
+<td>FP</td>
+<td>u32</td>
+<td>Base FP</td>
+</tr>
+<tr>
+<td>DP</td>
+<td>u32</td>
+<td>Base DP</td>
+</tr>
+<tr>
+<td>Can Escape?</td>
+<td>bool</td>
+<td>Can player escape from the enemy?</td>
+</tr>
+<tr>
+<td>Sneak Chance</td>
+<td>u16</td>
+<td>Chance of sneaking up on the enemy (1:n)</td>
+</tr>
+<tr>
+<td>Enemy Sneak Chance</td>
+<td>u16</td>
+<td>Chance of enemy sneaking up on the player (1:n)</td>
+</tr>
+<tr>
+<td>Special Move Count</td>
+<td>u16</td>
+<td># of special moves defined</td>
+</tr>
+<tr>
+<td>Special Moves</td>
+<td>ascii [n]</td>
+<td>Paths of defined special moves usable in battle</td>
+</tr>
+<tr>
+<td>Weakness Count</td>
+<td>u16</td>
+<td># of weaknesses</td>
+</tr>
+<tr>
+<td>Weaknesses</td>
+<td>ascii [n]</td>
+<td>Paths to special moves the enemy is weak to</td>
+</tr>
+<tr>
+<td>Strength Count</td>
+<td>u16</td>
+<td># of strengths</td>
+</tr>
+<tr>
+<td>Strengths</td>
+<td>ascii [n]</td>
+<td>Paths to special moves the enemy is strong against</td>
+</tr>
+<tr>
+<td>AI Level</td>
+<td>AI Level</td>
+<td>See <a href="#ai-level">AI Level</a></td>
+</tr>
+<tr>
+<td>AI Program</td>
+<td>ascii</td>
+<td>Path to program to use for AI tactics</td>
+</tr>
+<tr>
+<td>Use Tactics?</td>
+<td>bool</td>
+<td>Use a program for tactics instead of AI?</td>
+</tr>
+<tr>
+<td>Experience Reward</td>
+<td>u32</td>
+<td>Experience awarded to player on victory condition</td>
+</tr>
+<tr>
+<td>Currency Reward</td>
+<td>u32</td>
+<td>Currency awarded to player on victory condition</td>
+</tr>
+<tr>
+<td>Victory Program</td>
+<td>ascii</td>
+<td>Path to program to execute on victory condition</td>
+</tr>
+<tr>
+<td>Escape Program</td>
+<td>ascii</td>
+<td>Path to program to execute on escape condition</td>
+</tr>
+<tr>
+<td>Graphics Count</td>
+<td>u16</td>
+<td># of enemy graphics</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>ascii [n]</td>
+<td>Paths to graphics for enemy stances</td>
+</tr>
+<tr>
+<td>Custom Graphics Count</td>
+<td>u16</td>
+<td># of custom enemy graphics</td>
+</tr>
+<tr>
+<td>Custom Graphics</td>
+<td>ascii [n]</td>
+<td>Pairs of (path, name) for custom enemy graphics</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ai-level">AI Level</h4>
+<p>Defines the level of artificial intelligence (AI) of an entity. The implementation of intelligence
+is arbitrary and defined by the game programmer and/or a battle system plugin.</p>
+<p><strong>Enumeration</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td>u8</td>
+<td>0</td>
+<td>Low intelligence</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>u8</td>
+<td>1</td>
+<td>Medium intelligence</td>
+</tr>
+<tr>
+<td>High</td>
+<td>u8</td>
+<td>3</td>
+<td>High intelligence</td>
+</tr>
+<tr>
+<td>Very High</td>
+<td>u8</td>
+<td>4</td>
+<td>Very High intelligence</td>
+</tr>
+</tbody>
+</table>
+<h4 id="item">Item</h4>
+<p><strong>INCOMPLETE</strong>  </p>
+<p><strong>Supported Versions</strong>: 2.7</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>ascii</td>
+<td>RPGTLKIT ITEM</td>
+</tr>
+<tr>
+<td>Major Version</td>
+<td>u16</td>
+<td>Major version</td>
+</tr>
+<tr>
+<td>Minor Version</td>
+<td>u16</td>
+<td>Minor version</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>ascii</td>
+<td>Item display name</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ascii</td>
+<td>Item description</td>
+</tr>
+<tr>
+<td>Can Equip?</td>
+<td>bool</td>
+<td>Can the item be equipped?</td>
+</tr>
+<tr>
+<td>Can Use In Menu?</td>
+<td>bool</td>
+<td>Can the item be used in the menu?</td>
+</tr>
+<tr>
+<td>Can Use On Board?</td>
+<td>bool</td>
+<td>Can the item be used on a board?</td>
+</tr>
+<tr>
+<td>Can Use In Battle?</td>
+<td>bool</td>
+<td>Can the item be used in battle?</td>
+</tr>
+<tr>
+<td>Used By</td>
+<td>u8</td>
+<td></td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Buy Price</td>
+<td>u32</td>
+<td>Price item can be bought for</td>
+</tr>
+<tr>
+<td>Sell Price</td>
+<td>u32</td>
+<td>Price item be sold for</td>
+</tr>
+<tr>
+<td>Is Key Item?</td>
+<td>bool</td>
+<td>Is the item a key / quest item?</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/rpgtoolkit" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

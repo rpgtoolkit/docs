@@ -1,0 +1,119 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Index\n\n\nWelcome to the documentation for the RPG Toolkit Development System.\n\n\n\n\nAbout\n\n\nUser Guide\n\n\nTutorials\n\n\nContributors\n\n\nDeveloper Guide\n\n\n\n\nAbout\n\n\nThe RPG Toolkit Development System is a collection of tools that help\npeople create cross-platform role-playing games.\n\n\nContributors\n\n\nThe RPG Toolkit Development System only exists thanks to the hard work\nand dedication of open-source developers that volunteer their time to the\nproject. If you are a contributor and would appreciate attribution and a place\non this page, please start an issue on \nGitHub\n.\n\n\nFor a complete list of all contributors visit the\n\nGitHub organization page\n.\n\n\n\n\nChris Hutchinson\n\n\nJoshua Michael Daly\n\n\n\n\nLinks\n\n\n\n\nGitHub\n\n\nrpgtoolkit.net",
+            "title": "Home"
+        },
+        {
+            "location": "/#index",
+            "text": "Welcome to the documentation for the RPG Toolkit Development System.   About  User Guide  Tutorials  Contributors  Developer Guide",
+            "title": "Index"
+        },
+        {
+            "location": "/#about",
+            "text": "The RPG Toolkit Development System is a collection of tools that help\npeople create cross-platform role-playing games.",
+            "title": "About"
+        },
+        {
+            "location": "/#contributors",
+            "text": "The RPG Toolkit Development System only exists thanks to the hard work\nand dedication of open-source developers that volunteer their time to the\nproject. If you are a contributor and would appreciate attribution and a place\non this page, please start an issue on  GitHub .  For a complete list of all contributors visit the GitHub organization page .   Chris Hutchinson  Joshua Michael Daly",
+            "title": "Contributors"
+        },
+        {
+            "location": "/#links",
+            "text": "GitHub  rpgtoolkit.net",
+            "title": "Links"
+        },
+        {
+            "location": "/user/",
+            "text": "User Guide",
+            "title": "User Guide"
+        },
+        {
+            "location": "/user/#user-guide",
+            "text": "",
+            "title": "User Guide"
+        },
+        {
+            "location": "/developer/",
+            "text": "Developer Guide\n\n\nThis guide and associated collection of documents and resources is intended for developers and\ncontributors. If you are a user please use the \nUser Guide\n.\n\n\n\n\nFile Formats",
+            "title": "Home"
+        },
+        {
+            "location": "/developer/#developer-guide",
+            "text": "This guide and associated collection of documents and resources is intended for developers and\ncontributors. If you are a user please use the  User Guide .   File Formats",
+            "title": "Developer Guide"
+        },
+        {
+            "location": "/developer/formats/",
+            "text": "File Formats\n\n\nThe editor and engine components use a variety of specialized file formats and schemas to\nfacilitate game development and to support various features common in role-playing games.\n\n\nLegacy\n\n\nThe engine has some backwards compatibility with older (legacy) versions. The legacy file\nformats are binary formats that use \nlittle-endian\n\nbyte order.\n\n\n\n\nAnimation\n\n\nBackground\n\n\nBoard\n\n\nEnemy\n\n\nItem\n\n\nProject (Main File)\n\n\nPlayer\n\n\nSpecial Move\n\n\nStatus Effect\n\n\nTile\n\n\nTile Animation\n\n\nTile Bitmap\n\n\nTileset\n\n\n\n\nData Types\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nSize\n\n\n\n\n\n\n\n\n\n\nu8\n\n\nunsigned 8-bit integer\n\n\n1\n\n\n\n\n\n\nbool\n\n\nunsigned 8-bit boolean (false = 0, true \u2260 0)\n\n\n1\n\n\n\n\n\n\nu16\n\n\nunsigned 16-bit little-endian integer\n\n\n2\n\n\n\n\n\n\nu32\n\n\nunsigned 32-bit little-endian integer\n\n\n4\n\n\n\n\n\n\nu64\n\n\nunsigned 64-bit little-endian integer\n\n\n8\n\n\n\n\n\n\ns16\n\n\nsigned 16-bit little-endian integer\n\n\n2\n\n\n\n\n\n\ns32\n\n\nsigned 32-bit little-endian integer\n\n\n4\n\n\n\n\n\n\ns64\n\n\nsigned 64-bit little-endian integer\n\n\n8\n\n\n\n\n\n\nf32\n\n\nIEEE 754 single-precision floating-point number\n\n\n4\n\n\n\n\n\n\nf64\n\n\nIEEE 754 double-precision floating-point number\n\n\n8\n\n\n\n\n\n\nascii\n\n\nnull-terminated ASCII-encoded string\n\n\n*\n\n\n\n\n\n\nrgb\n\n\nr8g8b8 packed color\n\n\n4\n\n\n\n\n\n\n\n\nAnimation Frame\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nPath\n\n\nascii\n\n\nPath to the frame image\n\n\n\n\n\n\nTransparent Color\n\n\nrgb\n\n\nColor to be replaced with transparency when drawn\n\n\n\n\n\n\nSound\n\n\nascii\n\n\nPath to sound to play when frame is drawn\n\n\n\n\n\n\n\n\nAnimation\n\n\nSupported versions\n: 2.3\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nType\n\n\nascii\n\n\nRPGTLKIT ANIM\n\n\n\n\n\n\nMajor Version\n\n\nu16\n\n\nMajor version\n\n\n\n\n\n\nMinor Version\n\n\nu16\n\n\nMinor version\n\n\n\n\n\n\nWidth\n\n\nu32\n\n\nAnimation width (x bound)\n\n\n\n\n\n\nHeight\n\n\nu32\n\n\nAnimation height (y bound)\n\n\n\n\n\n\nFrame Count\n\n\nu32\n\n\n# of animation frames\n\n\n\n\n\n\nFrames\n\n\nAnimation Frame [n]\n\n\nAnimation frames (n = \nFrame Count\n)\n\n\n\n\n\n\nDelay\n\n\nf32\n\n\nDelay (in seconds) between frames\n\n\n\n\n\n\n\n\nBackground\n\n\nSupported versions\n: 2.3\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nType\n\n\nascii\n\n\nRPGTLKIT BKG\n\n\n\n\n\n\nMajor Version\n\n\nu16\n\n\nMajor version\n\n\n\n\n\n\nMinor Version\n\n\nu16\n\n\nMinor version\n\n\n\n\n\n\nBackground Image\n\n\nascii\n\n\nPath to background image to draw\n\n\n\n\n\n\nMusic\n\n\nascii\n\n\nPath to audio file to play as background music\n\n\n\n\n\n\nSelection Sound\n\n\nascii\n\n\nPath to audio file to play when player moves through menu\n\n\n\n\n\n\nChoice Sound\n\n\nascii\n\n\nPath to audio file to play when player chooses from menu\n\n\n\n\n\n\nReady Sound\n\n\nascii\n\n\nPath to audio file to play when player is ready\n\n\n\n\n\n\nInvalid Sound\n\n\nascii\n\n\nPath to audio file to play when player makes an invalid choice\n\n\n\n\n\n\n\n\nBoard\n\n\n\n\nThis documentation is incomplete.\n\n\n\n\nSupported versions\n: 2.4\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nType\n\n\nascii\n\n\nRPGTLKIT BOARD\n\n\n\n\n\n\nMajor Version\n\n\nu16\n\n\nMajor version\n\n\n\n\n\n\nMinor Version\n\n\nu16\n\n\nMinor version\n\n\n\n\n\n\nWidth\n\n\nu16\n\n\nBoard width (in tiles)\n\n\n\n\n\n\nHeight\n\n\nu16\n\n\nBoard height (in tiles)\n\n\n\n\n\n\nLayer Count\n\n\nu16\n\n\nBoard layer count\n\n\n\n\n\n\nCoordinate Type\n\n\nCoordinate Type\n\n\nCoordinate type (e.g. ortho, isometric)\n\n\n\n\n\n\nTile LUT Size\n\n\nu16\n\n\n# of LUT entries\n\n\n\n\n\n\nTile LUT\n\n\nstring [n]\n\n\nSee \nTile Lookup Table\n\n\n\n\n\n\nTile Matrix\n\n\nu16 [n]\n\n\nSee \nTile Matrix\n\n\n\n\n\n\nShading Type\n\n\nu8\n\n\nUnused\n\n\n\n\n\n\n\n\nTile Lookup Table\n\n\nThe tile lookup table (LUT) is a table of strings where each string is a path to a\nsingle tile, an animated tile, or a path to a tileset with a tile index appended\nto the file extension. Each tile in the board refers to an entry in the lookup table.\n\n\nExample LUT\n\n\n\n\n\n\n\n\nOffset\n\n\nValue\n\n\nComments\n\n\n\n\n\n\n\n\n\n\n0\n\n\ngrass.gph\n\n\nSingle tile\n\n\n\n\n\n\n1\n\n\nwater.tan\n\n\nAnimated tile\n\n\n\n\n\n\n2\n\n\nterrain.tst12\n\n\nTileset (tile # 12)\n\n\n\n\n\n\n\n\nTile Matrix\n\n\nThe tile matrix is a flattened 3-dimensional array of u16 integers referring to entries in the\ntile lookup table. The tile matrix uses an optional and rudimentary run-length encoding (RLE)\ncompression scheme for repeating sequences of tiles.\n\n\nPsuedocode\n\n\nlet size := width * height * depth\nlet offset := 0\n\nwhile offset < size\n\n  let index := read_u16()\n  let count := 1\n\n  if index < 0 then\n    count = -index\n    index = read_u16()\n  end if\n\n  for i = 0 to count - 1\n    matrix[offset + i] := index\n  end for\n\n  offset := offset + count\n\nend while\n\n\n\n\nCoordinate Type\n\n\nEnumeration\n  \n\n\nDefines coordinate types used for directional movement, rendering, raycasting,\ncollision detection, and other mathematical transformations. A coordinate type defines the\nrender mode used for various game elements (e.g. boards).\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nValue\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nOrthogonal\n\n\nu32\n\n\n1\n\n\n2D orthogonal perspective\n\n\n\n\n\n\nIsometric Stacked\n\n\nu32\n\n\n2\n\n\n2D stacked isometric perspective\n\n\n\n\n\n\nIsometric Rotated\n\n\nu32\n\n\n6\n\n\n2D rotated isometric perspective\n\n\n\n\n\n\n\n\nEnemy\n\n\nSupported versions\n: 2.1\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nType\n\n\nascii\n\n\nRPGTLKIT ENEMY\n\n\n\n\n\n\nMajor Version\n\n\nu16\n\n\nMajor version\n\n\n\n\n\n\nMinor Version\n\n\nu16\n\n\nMinor version\n\n\n\n\n\n\nName\n\n\nascii\n\n\nDisplay Name\n\n\n\n\n\n\nHP\n\n\nu32\n\n\nBase HP\n\n\n\n\n\n\nSMP\n\n\nu32\n\n\nBase SMP\n\n\n\n\n\n\nFP\n\n\nu32\n\n\nBase FP\n\n\n\n\n\n\nDP\n\n\nu32\n\n\nBase DP\n\n\n\n\n\n\nCan Escape?\n\n\nbool\n\n\nCan player escape from the enemy?\n\n\n\n\n\n\nSneak Chance\n\n\nu16\n\n\nChance of sneaking up on the enemy (1:n)\n\n\n\n\n\n\nEnemy Sneak Chance\n\n\nu16\n\n\nChance of enemy sneaking up on the player (1:n)\n\n\n\n\n\n\nSpecial Move Count\n\n\nu16\n\n\n# of special moves defined\n\n\n\n\n\n\nSpecial Moves\n\n\nascii [n]\n\n\nPaths of defined special moves usable in battle\n\n\n\n\n\n\nWeakness Count\n\n\nu16\n\n\n# of weaknesses\n\n\n\n\n\n\nWeaknesses\n\n\nascii [n]\n\n\nPaths to special moves the enemy is weak to\n\n\n\n\n\n\nStrength Count\n\n\nu16\n\n\n# of strengths\n\n\n\n\n\n\nStrengths\n\n\nascii [n]\n\n\nPaths to special moves the enemy is strong against\n\n\n\n\n\n\nAI Level\n\n\nAI Level\n\n\nSee \nAI Level\n\n\n\n\n\n\nAI Program\n\n\nascii\n\n\nPath to program to use for AI tactics\n\n\n\n\n\n\nUse Tactics?\n\n\nbool\n\n\nUse a program for tactics instead of AI?\n\n\n\n\n\n\nExperience Reward\n\n\nu32\n\n\nExperience awarded to player on victory condition\n\n\n\n\n\n\nCurrency Reward\n\n\nu32\n\n\nCurrency awarded to player on victory condition\n\n\n\n\n\n\nVictory Program\n\n\nascii\n\n\nPath to program to execute on victory condition\n\n\n\n\n\n\nEscape Program\n\n\nascii\n\n\nPath to program to execute on escape condition\n\n\n\n\n\n\nGraphics Count\n\n\nu16\n\n\n# of enemy graphics\n\n\n\n\n\n\nGraphics\n\n\nascii [n]\n\n\nPaths to graphics for enemy stances\n\n\n\n\n\n\nCustom Graphics Count\n\n\nu16\n\n\n# of custom enemy graphics\n\n\n\n\n\n\nCustom Graphics\n\n\nascii [n]\n\n\nPairs of (path, name) for custom enemy graphics\n\n\n\n\n\n\n\n\nAI Level\n\n\nDefines the level of artificial intelligence (AI) of an entity. The implementation of intelligence\nis arbitrary and defined by the game programmer and/or a battle system plugin.\n\n\nEnumeration\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nValue\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nLow\n\n\nu8\n\n\n0\n\n\nLow intelligence\n\n\n\n\n\n\nMedium\n\n\nu8\n\n\n1\n\n\nMedium intelligence\n\n\n\n\n\n\nHigh\n\n\nu8\n\n\n3\n\n\nHigh intelligence\n\n\n\n\n\n\nVery High\n\n\nu8\n\n\n4\n\n\nVery High intelligence\n\n\n\n\n\n\n\n\nItem\n\n\nINCOMPLETE\n  \n\n\nSupported Versions\n: 2.7\n\n\n\n\n\n\n\n\nField\n\n\nData Type\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nType\n\n\nascii\n\n\nRPGTLKIT ITEM\n\n\n\n\n\n\nMajor Version\n\n\nu16\n\n\nMajor version\n\n\n\n\n\n\nMinor Version\n\n\nu16\n\n\nMinor version\n\n\n\n\n\n\nName\n\n\nascii\n\n\nItem display name\n\n\n\n\n\n\nDescription\n\n\nascii\n\n\nItem description\n\n\n\n\n\n\nCan Equip?\n\n\nbool\n\n\nCan the item be equipped?\n\n\n\n\n\n\nCan Use In Menu?\n\n\nbool\n\n\nCan the item be used in the menu?\n\n\n\n\n\n\nCan Use On Board?\n\n\nbool\n\n\nCan the item be used on a board?\n\n\n\n\n\n\nCan Use In Battle?\n\n\nbool\n\n\nCan the item be used in battle?\n\n\n\n\n\n\nUsed By\n\n\nu8\n\n\n\n\n\n\n\n\n---\n\n\n\n\n\n\n\n\n\n\nBuy Price\n\n\nu32\n\n\nPrice item can be bought for\n\n\n\n\n\n\nSell Price\n\n\nu32\n\n\nPrice item be sold for\n\n\n\n\n\n\nIs Key Item?\n\n\nbool\n\n\nIs the item a key / quest item?",
+            "title": "File Formats"
+        },
+        {
+            "location": "/developer/formats/#file-formats",
+            "text": "The editor and engine components use a variety of specialized file formats and schemas to\nfacilitate game development and to support various features common in role-playing games.",
+            "title": "File Formats"
+        },
+        {
+            "location": "/developer/formats/#legacy",
+            "text": "The engine has some backwards compatibility with older (legacy) versions. The legacy file\nformats are binary formats that use  little-endian \nbyte order.   Animation  Background  Board  Enemy  Item  Project (Main File)  Player  Special Move  Status Effect  Tile  Tile Animation  Tile Bitmap  Tileset",
+            "title": "Legacy"
+        },
+        {
+            "location": "/developer/formats/#data-types",
+            "text": "Name  Description  Size      u8  unsigned 8-bit integer  1    bool  unsigned 8-bit boolean (false = 0, true \u2260 0)  1    u16  unsigned 16-bit little-endian integer  2    u32  unsigned 32-bit little-endian integer  4    u64  unsigned 64-bit little-endian integer  8    s16  signed 16-bit little-endian integer  2    s32  signed 32-bit little-endian integer  4    s64  signed 64-bit little-endian integer  8    f32  IEEE 754 single-precision floating-point number  4    f64  IEEE 754 double-precision floating-point number  8    ascii  null-terminated ASCII-encoded string  *    rgb  r8g8b8 packed color  4",
+            "title": "Data Types"
+        },
+        {
+            "location": "/developer/formats/#animation-frame",
+            "text": "Field  Data Type  Description      Path  ascii  Path to the frame image    Transparent Color  rgb  Color to be replaced with transparency when drawn    Sound  ascii  Path to sound to play when frame is drawn",
+            "title": "Animation Frame"
+        },
+        {
+            "location": "/developer/formats/#animation",
+            "text": "Supported versions : 2.3     Field  Data Type  Description      Type  ascii  RPGTLKIT ANIM    Major Version  u16  Major version    Minor Version  u16  Minor version    Width  u32  Animation width (x bound)    Height  u32  Animation height (y bound)    Frame Count  u32  # of animation frames    Frames  Animation Frame [n]  Animation frames (n =  Frame Count )    Delay  f32  Delay (in seconds) between frames",
+            "title": "Animation"
+        },
+        {
+            "location": "/developer/formats/#background",
+            "text": "Supported versions : 2.3     Field  Data Type  Description      Type  ascii  RPGTLKIT BKG    Major Version  u16  Major version    Minor Version  u16  Minor version    Background Image  ascii  Path to background image to draw    Music  ascii  Path to audio file to play as background music    Selection Sound  ascii  Path to audio file to play when player moves through menu    Choice Sound  ascii  Path to audio file to play when player chooses from menu    Ready Sound  ascii  Path to audio file to play when player is ready    Invalid Sound  ascii  Path to audio file to play when player makes an invalid choice",
+            "title": "Background"
+        },
+        {
+            "location": "/developer/formats/#board",
+            "text": "This documentation is incomplete.   Supported versions : 2.4     Field  Data Type  Description      Type  ascii  RPGTLKIT BOARD    Major Version  u16  Major version    Minor Version  u16  Minor version    Width  u16  Board width (in tiles)    Height  u16  Board height (in tiles)    Layer Count  u16  Board layer count    Coordinate Type  Coordinate Type  Coordinate type (e.g. ortho, isometric)    Tile LUT Size  u16  # of LUT entries    Tile LUT  string [n]  See  Tile Lookup Table    Tile Matrix  u16 [n]  See  Tile Matrix    Shading Type  u8  Unused",
+            "title": "Board"
+        },
+        {
+            "location": "/developer/formats/#tile-lookup-table",
+            "text": "The tile lookup table (LUT) is a table of strings where each string is a path to a\nsingle tile, an animated tile, or a path to a tileset with a tile index appended\nto the file extension. Each tile in the board refers to an entry in the lookup table.  Example LUT     Offset  Value  Comments      0  grass.gph  Single tile    1  water.tan  Animated tile    2  terrain.tst12  Tileset (tile # 12)",
+            "title": "Tile Lookup Table"
+        },
+        {
+            "location": "/developer/formats/#tile-matrix",
+            "text": "The tile matrix is a flattened 3-dimensional array of u16 integers referring to entries in the\ntile lookup table. The tile matrix uses an optional and rudimentary run-length encoding (RLE)\ncompression scheme for repeating sequences of tiles.  Psuedocode  let size := width * height * depth\nlet offset := 0\n\nwhile offset < size\n\n  let index := read_u16()\n  let count := 1\n\n  if index < 0 then\n    count = -index\n    index = read_u16()\n  end if\n\n  for i = 0 to count - 1\n    matrix[offset + i] := index\n  end for\n\n  offset := offset + count\n\nend while",
+            "title": "Tile Matrix"
+        },
+        {
+            "location": "/developer/formats/#coordinate-type",
+            "text": "Enumeration     Defines coordinate types used for directional movement, rendering, raycasting,\ncollision detection, and other mathematical transformations. A coordinate type defines the\nrender mode used for various game elements (e.g. boards).     Field  Data Type  Value  Description      Orthogonal  u32  1  2D orthogonal perspective    Isometric Stacked  u32  2  2D stacked isometric perspective    Isometric Rotated  u32  6  2D rotated isometric perspective",
+            "title": "Coordinate Type"
+        },
+        {
+            "location": "/developer/formats/#enemy",
+            "text": "Supported versions : 2.1     Field  Data Type  Description      Type  ascii  RPGTLKIT ENEMY    Major Version  u16  Major version    Minor Version  u16  Minor version    Name  ascii  Display Name    HP  u32  Base HP    SMP  u32  Base SMP    FP  u32  Base FP    DP  u32  Base DP    Can Escape?  bool  Can player escape from the enemy?    Sneak Chance  u16  Chance of sneaking up on the enemy (1:n)    Enemy Sneak Chance  u16  Chance of enemy sneaking up on the player (1:n)    Special Move Count  u16  # of special moves defined    Special Moves  ascii [n]  Paths of defined special moves usable in battle    Weakness Count  u16  # of weaknesses    Weaknesses  ascii [n]  Paths to special moves the enemy is weak to    Strength Count  u16  # of strengths    Strengths  ascii [n]  Paths to special moves the enemy is strong against    AI Level  AI Level  See  AI Level    AI Program  ascii  Path to program to use for AI tactics    Use Tactics?  bool  Use a program for tactics instead of AI?    Experience Reward  u32  Experience awarded to player on victory condition    Currency Reward  u32  Currency awarded to player on victory condition    Victory Program  ascii  Path to program to execute on victory condition    Escape Program  ascii  Path to program to execute on escape condition    Graphics Count  u16  # of enemy graphics    Graphics  ascii [n]  Paths to graphics for enemy stances    Custom Graphics Count  u16  # of custom enemy graphics    Custom Graphics  ascii [n]  Pairs of (path, name) for custom enemy graphics",
+            "title": "Enemy"
+        },
+        {
+            "location": "/developer/formats/#ai-level",
+            "text": "Defines the level of artificial intelligence (AI) of an entity. The implementation of intelligence\nis arbitrary and defined by the game programmer and/or a battle system plugin.  Enumeration     Field  Data Type  Value  Description      Low  u8  0  Low intelligence    Medium  u8  1  Medium intelligence    High  u8  3  High intelligence    Very High  u8  4  Very High intelligence",
+            "title": "AI Level"
+        },
+        {
+            "location": "/developer/formats/#item",
+            "text": "INCOMPLETE     Supported Versions : 2.7     Field  Data Type  Description      Type  ascii  RPGTLKIT ITEM    Major Version  u16  Major version    Minor Version  u16  Minor version    Name  ascii  Item display name    Description  ascii  Item description    Can Equip?  bool  Can the item be equipped?    Can Use In Menu?  bool  Can the item be used in the menu?    Can Use On Board?  bool  Can the item be used on a board?    Can Use In Battle?  bool  Can the item be used in battle?    Used By  u8     ---      Buy Price  u32  Price item can be bought for    Sell Price  u32  Price item be sold for    Is Key Item?  bool  Is the item a key / quest item?",
+            "title": "Item"
+        }
+    ]
+}
