@@ -1,0 +1,12 @@
+site_name: RPG Toolkit Development System
+repo_url: https://github.com/rpgtoolkit
+theme: readthedocs
+markdown_extensions:
+- extra
+- tables
+pages:
+- Home: index.md
+- User Guide: user/index.md
+- Developer Guide:
+  - 'Home': 'developer/index.md'
+  - 'File Formats': 'developer/formats.md'
